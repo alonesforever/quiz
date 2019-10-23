@@ -1,4 +1,17 @@
+<?php
+session_start();
 
+error_reporting(E_ERROR && E_WARNING);
+
+$nome = $_POST['nome'];
+$pontos = "<script>document.write(cont50)</script>";
+$_SESSION['nome'] = $nome;
+$_SESSION['ponto'] = $pontos;
+
+$questao = (isset($_GET["q"])) ? $_GET["q"]:1;
+
+
+ ?>
 
 
 
@@ -24,13 +37,8 @@
 <body style="background: CK" onload="conton();">
 	<?php
 
-
-  session_start();
-$nome = $_POST['nome'];
-$pontos = "<script>document.write(cont50)</script>";
- $_SESSION['nome'] = $nome;
-  $_SESSION['ponto'] = $pontos;
 echo "<h1 style='color:red;'>$nome</h1><h1>$pontos</h1>";
+echo "<h2 style='color:blue;'>Questão: $questao</h2>";
 
 
  ?>
@@ -61,9 +69,10 @@ echo "<h1 style='color:red;'>$nome</h1><h1>$pontos</h1>";
 <center><div class="acertou" id="acertou">
 	<img src="acertou.png"><br>
 	<br>
-
-   <button style="font-family: 'sans-serif'; position: relative; top: 240px;  " class="btn">Ir para a proxima pergunta</button>
-
+    
+     
+   <a href="quiz.php?q=<?=++$questao;?>" type="submit" style="font-family: 'sans-serif'; position: absolute; top: 330px;left:50px;  " class="btn">Ir para a proxima pergunta</a>
+</form>
 </div></center>
 <center><div class="errou" id="errou1">
 	<img src="errou.png"><br>
@@ -112,14 +121,12 @@ var contr2 = new Number();
   var repetcont = document.getElementById("repetcont");
 contr2 = 5;
 
-repetcont.innerText = '1';
+
 
 		
       function acertou(){
-
-var cont;
-		cont = 1;
-var cont50 = cont.value;
+       
+  var cont = 1;
         repetcont.innerText = cont;
         acertou1.style.cssText = 'left:425px; top:180px; background:#7FFF00; border-radius:35px; border: 3px solid black;';
         impatar.style.cssText = 'left: auto;'

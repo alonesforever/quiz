@@ -1,3 +1,5 @@
+body {margin:0;}
+
 .Maracujá{
 	width: 700px;
 	height: 800px;
@@ -6,7 +8,8 @@
 	border-radius: 25px;
 	z-index: 1;
 }
-button{
+button, a.btn{
+	display: block;
 	width: 80%;
 	height: 60px;
 	font-family: 'sansserif';
@@ -20,10 +23,30 @@ button{
 	border-radius: 7px;
 	color: green;
 	font-size: 20px;
+	text-decoration: none;
 }
-button:hover{
+button:hover, a.btn {
 background: #ff1493;
 }
+
+a.btn{
+	display: block;
+	width: 80%;
+	height: 60px;
+	font-family: 'sansserif';
+	position: relative;
+	top: 300px;
+	background: pink;
+	border:none;
+	box-shadow: 0px 5px 0px #C71585;
+	cursor: pointer;
+	outline: none;
+	border-radius: 7px;
+	color: green;
+	font-size: 20px;
+	text-decoration: none;
+}
+
 button:active{
 	top: 305px;
 	box-shadow: none;
@@ -63,6 +86,7 @@ button:active{
 
 }
 .acertou{
+
 	width: 500px;
 	height: 400px;
 	background: green;
@@ -104,10 +128,7 @@ button:active{
        background: #1C1C1C;
 		z-index: 2;
     position: relative;
-     -webkit-filter: blur(10px);
-    -moz-filter: blur(10px);
-    -o-filter: blur(10px);
-    -ms-filter: blur(10px);
+
     left: 1000%;
 }
 .btn{
